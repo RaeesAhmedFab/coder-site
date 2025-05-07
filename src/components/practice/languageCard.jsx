@@ -1,27 +1,50 @@
 import React from 'react';
+import { AvatarDemo } from './AvatarDemo';
+import { Bookmark } from 'lucide-react';
+import { Share2 } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
-const LanguageCard = () => {
+const LanguageCard = ({ title, description, badge, tags = [] }) => {
   return (
     <>
-      <div class='bg-[#212227]   text-white rounded-lg p-4 w-full '>
-        <div class='flex justify-between items-center'>
-          <div class='text-xl font-semibold'>Chips Input</div>
-          <div class='text-sm text-[#7a591c] border border-[#7a591c] rounded-xl  px-3 '>Hot</div>
-        </div>
-        <div class='mt-2 text-sm'>Chips Input</div>
-        <div class='mt-4 flex gap-2'>
-          <button class='bg-[#292c35] text-[#29753e] text-sm py-1 px-2 rounded-xl'>React.js</button>
-          <button class='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl'>Easy</button>
-          <button class='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl'>Amazon</button>
-          <button class='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl'>Flipkart</button>
-          <button class='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl'>Phonepe</button>
-        </div>
-        <div class='mt-4 flex justify-between items-center text-sm'>
-          <div class='text-gray-500'>25 mins</div>
-          <div class='flex space-x-2'>
-            <button class='text-gray-500'>Share</button>
-            <button class='text-gray-500'>Bookmark</button>
+      <div className='bg-[#212227]  hover:opacity-70  text-white rounded-lg p-4 w-full max-h[100px]  cursor-pointer '>
+        <div className='flex gap-x-3 w-full'>
+          <div className='flex flex-col justify-center m-1'>
+            <AvatarDemo />
           </div>
+          <div className='flex flex-col gap-y-2 w-full  '>
+            <div className='flex justify-between items-center relative'>
+              <div className='text-xl font-semibold'>{title}</div>
+              <div className='text-sm text-[#7a591c] border border-[#7a591c] rounded-xl px-3 absolute left-30'>
+                {badge}
+              </div>
+            </div>
+
+            <div className=' text-sm'>{description}</div>
+            <div className='flex flex-wrap  gap-2'>
+              {tags?.map((tag, index) => (
+                <>
+                  <button key={index} className='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl'>
+                    {tag}
+                  </button>
+                </>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className=' relative w-full '>
+          <div className='absolute  right-2 bottom-16 flex justify-center items-center gap-5'>
+            <div>
+              <Share2 />
+            </div>
+            <div>
+              <Bookmark />
+            </div>
+          </div>
+        </div>
+        <div className='flex justify-end items-end gap-2  '>
+          <Clock className='text-sm' />
+          <span className='text-sm'>25 min</span>
         </div>
       </div>
     </>

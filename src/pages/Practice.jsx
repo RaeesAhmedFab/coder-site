@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // Images
 import JS from '../images/js.png';
 import HTML from '../images/html.png';
@@ -7,10 +8,10 @@ import Node from '../images/node.png';
 import { Input } from '@/components/ui/input';
 // Component
 import { DropdownButton } from '../components/practice/DropdownButton';
-import LanguageCard from '@/components/practice/languageCard';
 // Custom Icons
 import SVGComponent from '@/components/practice/CustomIcons/Svg';
 import CompanyFilterCard from '@/components/practice/CompanyFilterCard';
+import LanguageCardList from '@/components/practice/LanguageCardList';
 
 // Dummy Data
 const ICONS = [
@@ -37,7 +38,7 @@ const Practice = () => {
 
           <div className='flex flex-wrap gap-5 justify-center items-center mb-8'>
             <a
-              href=''
+              href='#'
               className='bg-transparent border-2 border-[rgb(229,140,51)] text-[rgb(229,140,51)] hover:bg-[rgb(229,140,51)]/10 font-bold py-3 px-8 rounded-md transform transition-transform duration-300 hover:scale-105'
             >
               Practice
@@ -62,7 +63,7 @@ const Practice = () => {
         {/* Left Filters Section */}
         <div className='flex flex-col w-full lg:w-3/4  gap-4'>
           <div className='w-full flex items-center justify-between'>
-            <div className='flex items-center gap-4'>
+            <div className='flex  flex-wrap  items-center gap-4'>
               <DropdownButton />
               <DropdownButton />
             </div>
@@ -73,7 +74,9 @@ const Practice = () => {
           </div>
 
           <div className='w-full'>
-            <LanguageCard />
+            <Link to={'/languageCardDetails'}>
+              <LanguageCardList />
+            </Link>
           </div>
         </div>
 

@@ -3,6 +3,7 @@ import { Layout } from './layouts/Layout';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import Practice from './pages/Practice';
+import LanguageCardDetails from './components/LanguageCardDetails/LanguageCardDetails';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='*' element={<NotFoundPage />} />
           <Route path='/admin' element={<NotFoundPage />} />
           <Route path='/practice' element={<Practice />} />
+          <Route path='/languageCardDetails' element={<LanguageCardDetails />} />
         </Route>
       </Routes>
     </Router>
