@@ -27,28 +27,35 @@ const LanguageCardDetails = () => {
   const ActiveComponent = Tab_Components[activeTab];
 
   return (
-    <div className='max-w-2xl bg-[#212227] border border-[#42444b] p-6 rounded-lg'>
-      <div className='flex space-x-6 border-b border-[#42444b] mb-4' role='tablist'>
-        {Tabs.map(({ name, icons: Icon }) => (
-          <button
-            key={name}
-            role='tab'
-            aria-selected={activeTab === name}
-            className={`flex items-center gap-2 pb-2 transition-colors font-medium ${
-              activeTab === name ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
-            }`}
-            onClick={() => setActiveTab(name)}
-          >
-            <Icon size={18} />
-            <span>{name}</span>
-          </button>
-        ))}
+    <>
+      <div className='p-5'>
+        <div className='max-w-xl bg-[#212227] border border-[#42444b] p-6 rounded-lg  '>
+          {/* Tabs */}
+          <div className='flex space-x-6 border-b border-[#42444b] mb-4' role='tablist'>
+            {Tabs.map(({ name, icons: Icon }) => (
+              <button
+                key={name}
+                role='tab'
+                aria-selected={activeTab === name}
+                className={`flex items-center gap-2 pb-2 transition-colors font-medium cursor-pointer ${
+                  activeTab === name ? 'text-white border-b-2 border-white' : 'text-gray-400 hover:text-white'
+                }`}
+                onClick={() => setActiveTab(name)}
+              >
+                <Icon size={18} />
+                <span>{name}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Scrollable Content Area */}
+          <div role='tabpanel' className='text-white max-h-[500px] overflow-y-auto pr-2 custom-scrollbar'>
+            {activeTab !== 'Problem' && <h2 className='text-lg font-bold mb-2  '>{activeTab}</h2>}
+            <ActiveComponent />
+          </div>
+        </div>
       </div>
-      <div role='tabpanel' className='text-white'>
-        {activeTab !== 'Problem' && <h2 className='text-lg font-bold mb-2'>{activeTab}</h2>}
-        <ActiveComponent />
-      </div>
-    </div>
+    </>
   );
 };
 

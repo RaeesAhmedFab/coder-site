@@ -4,16 +4,18 @@ const Discuss = () => {
   return (
     <>
       <div className='flex justify-center items-center'>
-        <div className='max-w-82 flex justify-center items-center h-screen '>
-          <div className='bg-[#212227] border-2 border-[#42444b] p-4 rounded-lg flex justify-center items-center flex-col '>
+        <div className='max-w-[445px] flex justify-center items-center h-screen '>
+          <div className=' flex justify-center items-center flex-col '>
             <div className=''>
-              <h1 className='flex justify-center items-center text-2xl'>Access Restricted</h1>
+              <h1 className='flex justify-center items-center text-2xl mb-2 '>Join Our Developer Community</h1>
               <p className='flex justify-center items-center text-sm text-center'>
-                You're just one click away from the full explanation. Log in to continue.
+                Stuck on a problem, brushing up your skills, or preparing for interviews? Our Discord community is the
+                perfect place to ask questions, share knowledge, and support each other. Join us to connect with
+                like-minded developers and stay sharp every day.
               </p>
             </div>
-            <div className='bg-[#e58c31] text-white flex justify-center items-center rounded-full w-[50%]  mt-2 py-2 px-2'>
-              <button>Login/Sign Up</button>
+            <div className='bg-green-600 text-white flex justify-center items-center rounded-lg text-xl  mt-3 py-2 px-4'>
+              <button className='cursor-pointer'>Join Our Discord</button>
             </div>
           </div>
         </div>

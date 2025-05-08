@@ -14,15 +14,15 @@ const Problem = () => {
       <div className='relative'>
         <h1 className='text-2xl'>Chips Input</h1>
         <div className='absolute top-1 right-6 flex gap-4'>
-          <div className='flex flex-row gap-2'>
+          <div className='flex flex-row gap-2 cursor-pointer '>
             <Heart />
             <Share2 />
           </div>
         </div>
       </div>
 
-      <div className='border border-b-[#42444b] border-t-0 border-l-0 border-r-0 '>
-        <div className='flex mt-1.5 mb-3 items-center gap-2  '>
+      <div className='border border-b-[#42444b] border-t-0 border-l-0 border-r-0 cursor-pointer '>
+        <div className='flex mt-1.5 mb-3 items-center gap-2   '>
           {stats.map((item, index) => (
             <React.Fragment key={index}>
               <item.icon size={18} />
@@ -74,7 +74,7 @@ const Problem = () => {
         <h1>Companies</h1>
         <div className='flex  gap-3 mt-2'>
           {buttonNames.map((name, index) => (
-            <h1 key={index} className='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl w-max'>
+            <h1 key={index} className='bg-[#292c35] text-[#56528b] text-sm py-1 px-2 rounded-xl w-max cursor-pointer '>
               {name}
             </h1>
           ))}
@@ -83,7 +83,7 @@ const Problem = () => {
       <hr className='border mt-2' />
       <div>
         <h1>Solve Similar questions</h1>
-        <h1 className='bg-transparent border-2 border-[rgb(229,140,51)] text-[rgb(229,140,51)] hover:bg-[rgb(229,140,51)]/10 font-bold py-3 px-8 rounded-md transform transition-transform duration-300 hover:scale-105 inline-block mt-2 '>
+        <h1 className='bg-transparent inline-block mt-2 border-2 border-[rgb(229,140,51)] text-[rgb(229,140,51)] hover:bg-[rgb(229,140,51)]/10 font-bold py-3 px-4 rounded-md cursor-pointer '>
           Similar Questions
         </h1>
       </div>
